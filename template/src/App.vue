@@ -11,15 +11,13 @@
 
 <script>
 {{#unless router}}
-import HelloWorld from './components/HelloWorld'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import HelloWorld from './components/HelloWorld';
 
 {{/unless}}
 export default {
-  name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
+  name: 'app',
   components: {
-    HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    HelloWorld,
 </script>
 
 <style>
