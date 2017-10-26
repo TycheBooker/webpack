@@ -44,6 +44,10 @@ module.exports = {
       "type": "confirm",
       "message": "Install vue-router?"
     },
+    "axios": {
+      "type": "confirm",
+      "message": "Use Axios for http requests?"
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"

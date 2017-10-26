@@ -7,10 +7,12 @@ import App from './App'
 {{#router}}
 import router from './router'
 {{/router}}
+{{#axios}}
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
+{{/axios}}
 
 Vue.config.productionTip = false
 
