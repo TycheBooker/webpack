@@ -14,10 +14,10 @@
 import HelloWorld from './components/HelloWorld'
 {{/unless}}
 export default {
-  name: 'app'{{#router}},
+  name: 'app'{{#unless router}},
   components: {
     HelloWorld,
-  }{{/router}}
+  }{{/unless}}
 }
 </script>
 
