@@ -55,4 +55,4 @@ Note you should probably only do this for the styles written by yourself for you
 
 ### SCSS Includes
 
-The Scss loader has been preconfigured to include all scss partial files located in `/assets/sass/includes/` into all scss blocks. To avoid repeated css code, these files shouldn't include anything but pure scss functions like mixins and vars.
+The Scss loader has been preconfigured to include all scss partial files located in `/styles/includes/` into all scss blocks. To avoid repeated css code, these files shouldn't include anything but pure scss functions like mixins and vars.

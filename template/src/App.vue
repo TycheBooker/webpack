@@ -18,9 +18,9 @@ export default {
   name: 'app',
   components: {
     HelloWorld,
+  }
+}
 </script>
-
-<style src="./styles/includes/vars.scss" lang="scss"></style>
 
 <style lang="scss">
 @import './styles/reset.scss';
