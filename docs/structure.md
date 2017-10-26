@@ -12,8 +12,11 @@
 │   ├── App.vue                 # main app component
 │   ├── components/             # ui components
 │   │   └── ...
-│   └── assets/                 # module assets (processed by webpack)
-│       └── ...
+│   ├── assets/                 # module assets (processed by webpack)
+│   │   └── ...
+│   └── styles/                 # scss files
+│       ├── includes/           # scss partials for including (mixins and vars)
+│       └── ...
 ├── static/                     # pure static assets (directly copied)
 file
 ├── .babelrc                    # babel config

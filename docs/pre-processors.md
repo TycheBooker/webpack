@@ -53,6 +53,29 @@ or import them into the style tag:
 
 Note you should probably only do this for the styles written by yourself for your application. For existing libraries e.g. Bootstrap or Semantic UI, you can place them inside `/static` and reference them directly in `index.html`. This avoids extra build time and also is better for browser caching. (See [Static Asset Handling](static.md))
 
-### SCSS Includes
+### SCSS Partials Includes
 
 The Scss loader has been preconfigured to include all scss partial files located in `/styles/includes/` into all scss blocks. To avoid repeated css code, these files shouldn't include anything but pure scss functions like mixins and vars.
+
+### SVG-s
+
+This boilerplate comes with preconfigured inline svg loading and svg optimization.
+[VueSvgLoader] (https://github.com/visualfanatic/vue-svg-loader) convertes the svg into a Vue component which you can then include as a custom component. In its options it has [SVGO] (https://github.com/svg/svgo) included with some basic rules for svg optimization, which can be upgraded in your `build/webpack.base.conf.js`.
+
+To include an inline svg you should import the svg and register it as a Vue Component, it can then be used as a regular Vue component.
+
+``` html
+<template>
+  <SomeIcon/>
+</template>
+
+<script>
+import SomeIcon from './assets/svg/some-icon.svg';
+
+export default {
+  components: {
+    SomeIcon,
+  },
+};
+</script>
+```
