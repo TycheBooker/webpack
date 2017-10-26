@@ -20,6 +20,13 @@ export default {
     HelloWorld,
 </script>
 
+<style src="./styles/includes/vars.scss" lang="scss"></style>
+
+<style lang="scss">
+@import './styles/reset.scss';
+@import './styles/base.scss';
+</style>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

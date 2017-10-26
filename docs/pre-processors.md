@@ -1,12 +1,7 @@
 # Pre-Processors
 
-This boilerplate has pre-configured CSS extraction for most popular CSS pre-processors including LESS, SASS, Stylus, and PostCSS. To use a pre-processor, all you need to do is installing the appropriate webpack loader for it. For example, to use SASS:
-
-``` bash
-npm install sass-loader node-sass --save-dev
-```
-
-Note you also need to install `node-sass` because `sass-loader` depends on it as a peer dependency.
+This boilerplate has pre-configured CSS extraction for most popular CSS pre-processors including LESS, SASS, Stylus, and PostCSS. The SassLoader and NodeSass have already been added.
+To use any other pre-processor, you need to install the appropriate webpack loader and its dependencies for it.
 
 ### Using Pre-Processors inside Components
 
@@ -47,5 +42,17 @@ To ensure consistent extraction and processing, it is recommended to import glob
 <!-- App.vue -->
 <style src="./styles/global.less" lang="less"></style>
 ```
+or import them into the style tag:
+
+``` html
+<!-- App.vue -->
+<style lang="scss">
+@import './styles/base.scss';
+</style>
+```
 
 Note you should probably only do this for the styles written by yourself for your application. For existing libraries e.g. Bootstrap or Semantic UI, you can place them inside `/static` and reference them directly in `index.html`. This avoids extra build time and also is better for browser caching. (See [Static Asset Handling](static.md))
+
+### SCSS Includes
+
+The Scss loader has been preconfigured to include all scss partial files located in `/assets/sass/includes/` into all scss blocks. To avoid repeated css code, these files shouldn't include anything but pure scss functions like mixins and vars.

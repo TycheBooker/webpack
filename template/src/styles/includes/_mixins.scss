@@ -1,0 +1,94 @@
+@import '~breakpoint-sass/stylesheets/breakpoint';
+
+/* Hard column width */
+@function colw($n, $gutter: $gutter) {
+  @return $n * ($col + $gutter);
+}
+
+/* Strip units */
+@function strip($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/* Clamped property lerp mixin */
+@mixin clamp($properties, $min, $max, $min-vw: 480px, $max-vw: colw(12)) {
+
+  // lower value
+  @each $property in $properties {
+    #{$property}: $min;
+  }
+
+  // lerp
+  @include breakpoint($min-vw $max-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{strip($max - $min) / strip($max-vw - $min-vw)} * (100vw - #{$min-vw}) + #{$min});
+    }
+  }
+
+  // upper value
+  @include breakpoint($max-vw) {
+    @each $property in $properties {
+      #{$property}: $max;
+    }
+  }
+}
+
+/* Split props on breakpoint */
+@mixin break-prop($properties, $value-small, $value-large, $breakpoint: 640px) {
+  @each $property in $properties {
+    #{$property}: $value-small;
+  }
+
+  @include breakpoint($breakpoint) {
+    @each $property in $properties {
+      #{$property}: $value-large;
+    }
+  }
+}
+
+@mixin divfill($position: absolute) {
+  position: $position;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Screen reader only */
+@mixin sr-only {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(50%) !important;
+  contain: strict;
+}
+
+/* Aspect Ratio */
+@mixin ratio($x, $y) {
+  &::before {
+    padding-bottom: percentage($y / $x);
+    content: '';
+    display: block;
+  }
+}
+
+/* Returns value in ems */
+@function em($value, $context: 16) {
+  @return $value / $context * 1em;
+}
+
+
+/* Clearfix */
+@mixin clearfix() {
+    &:after {
+        content: "";
+        display: table;
+        line-height: 0;
+        clear: both;
+    }
+}

@@ -1,0 +1,36 @@
+body {
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: 'liga', 'kern', 'pnum';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.hover-disabled {
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: colw(12);
+}
+
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: colw(10);
+}
+
+.padded {
+  @include break-prop(padding-left padding-right, 30px, $gutter);
+}
+
