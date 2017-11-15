@@ -2,7 +2,7 @@
 
 > A Webpack setup with hot-reload, lint-on-save, scss & css extraction.
 
-> This is a simplified version of the official vue-webpack template with added scss-loader and a different eslint setup made for the needs of the No42 frontend team.
+> This is a simplified version of the official vue-webpack template with added scss-loader, svg-loader and a different eslint setup made for the needs of the No42 frontend team.
 
 > This template is Vue 2.0 compatible.
 
